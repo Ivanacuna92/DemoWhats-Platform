@@ -6,6 +6,8 @@ import makeWASocket, {
 } from "@whiskeysockets/baileys";
 import qrcode from "qrcode-terminal";
 import pino from "pino";
+import fs from "fs/promises";
+import path from "path";
 import config from "../config/config.js";
 import logger from "../services/logger.js";
 import aiService from "../services/aiService.js";
@@ -344,8 +346,6 @@ class WhatsAppBot {
   }
 
   async clearSession() {
-    const fs = require("fs").promises;
-    const path = require("path");
     const authPath = path.join(process.cwd(), "auth_baileys");
 
     try {
