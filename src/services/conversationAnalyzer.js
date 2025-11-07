@@ -1,6 +1,6 @@
-const axios = require('axios');
-const config = require('../config/config');
-const database = require('./database');
+import axios from 'axios';
+import config from '../config/config.js';
+import database from './database.js';
 
 class ConversationAnalyzer {
     constructor() {
@@ -335,4 +335,4 @@ Responde ÚNICAMENTE con un JSON en este formato exacto:
     }
 }
 
-module.exports = new ConversationAnalyzer();
+export default new ConversationAnalyzer();

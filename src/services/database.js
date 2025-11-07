@@ -1,5 +1,6 @@
-const mysql = require('mysql2/promise');
-require('dotenv').config();
+import mysql from 'mysql2/promise';
+import dotenv from 'dotenv';
+dotenv.config();
 
 class Database {
     constructor() {
@@ -129,4 +130,4 @@ class Database {
 // Singleton
 const database = new Database();
 
-module.exports = database;
+export default database;

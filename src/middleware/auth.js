@@ -1,4 +1,4 @@
-const authService = require('../services/authService');
+import authService from '../services/authService.js';
 
 // Middleware que requiere autenticación para todas las rutas
 const requireAuth = async (req, res, next) => {
@@ -59,7 +59,7 @@ const requireSupportOrAdmin = (req, res, next) => {
     next();
 };
 
-module.exports = {
+export {
     requireAuth,
     requireAdmin,
     requireSupportOrAdmin

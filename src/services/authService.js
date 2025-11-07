@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt');
-const crypto = require('crypto');
-const database = require('./database');
+import bcrypt from 'bcrypt';
+import crypto from 'crypto';
+import database from './database.js';
 
 class AuthService {
     constructor() {
@@ -248,4 +248,4 @@ class AuthService {
     }
 }
 
-module.exports = new AuthService();
+export default new AuthService();

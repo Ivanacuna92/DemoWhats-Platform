@@ -1,4 +1,4 @@
-const database = require('./database');
+import database from './database.js';
 
 class SalesManager {
     constructor() {
@@ -457,4 +457,4 @@ class SalesManager {
     }
 }
 
-module.exports = new SalesManager();
+export default new SalesManager();

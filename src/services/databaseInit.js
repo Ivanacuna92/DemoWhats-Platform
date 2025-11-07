@@ -1,4 +1,5 @@
-const database = require('./database');
+import database from './database.js';
+import bcrypt from 'bcrypt';
 
 class DatabaseInit {
     async createTables() {
@@ -86,7 +87,6 @@ class DatabaseInit {
             // Insertar usuario admin por defecto si no existe
             const adminExists = await database.findOne('support_users', 'email = ?', ['admin@whatspanel.com']);
             if (!adminExists) {
-                const bcrypt = require('bcrypt');
                 const hashedPassword = await bcrypt.hash('admin123', 10);
                 await database.insert('support_users', {
                     email: 'admin@whatspanel.com',
@@ -107,4 +107,4 @@ class DatabaseInit {
     }
 }
 
-module.exports = new DatabaseInit();
+export default new DatabaseInit();

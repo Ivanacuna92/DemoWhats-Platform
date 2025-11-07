@@ -1,4 +1,4 @@
-const database = require('./database');
+import database from './database.js';
 
 class HumanModeManager {
     constructor() {
@@ -296,4 +296,4 @@ class HumanModeManager {
     }
 }
 
-module.exports = new HumanModeManager();
+export default new HumanModeManager();

@@ -1,4 +1,4 @@
-const database = require('./database');
+import database from './database.js';
 
 class Logger {
     constructor() {
@@ -201,4 +201,4 @@ class Logger {
 
 }
 
-module.exports = new Logger();
+export default new Logger();

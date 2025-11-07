@@ -1,7 +1,7 @@
-const WhatsAppBot = require('./src/bot/whatsappBot');
-const WebServer = require('./src/web/server');
-const config = require('./src/config/config');
-const databaseInit = require('./src/services/databaseInit');
+import WhatsAppBot from './src/bot/whatsappBot.js';
+import WebServer from './src/web/server.js';
+import config from './src/config/config.js';
+import databaseInit from './src/services/databaseInit.js';
 
 // Crear instancia del bot
 const bot = new WhatsAppBot();

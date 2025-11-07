@@ -1,6 +1,6 @@
-const axios = require('axios');
-const config = require('../config/config');
-const csvService = require('./csvService');
+import axios from 'axios';
+import config from '../config/config.js';
+import csvService from './csvService.js';
 
 class AIService {
     constructor() {
@@ -67,4 +67,4 @@ class AIService {
     }
 }
 
-module.exports = new AIService();
+export default new AIService();

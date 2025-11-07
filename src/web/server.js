@@ -1,20 +1,26 @@
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
-const cookieParser = require("cookie-parser");
-const multer = require("multer");
-const logger = require("../services/logger");
-const humanModeManager = require("../services/humanModeManager");
-const salesManager = require("../services/salesManager");
-const conversationAnalyzer = require("../services/conversationAnalyzer");
-const authService = require("../services/authService");
-const csvService = require("../services/csvService");
-const {
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import multer from 'multer';
+import logger from '../services/logger.js';
+import humanModeManager from '../services/humanModeManager.js';
+import salesManager from '../services/salesManager.js';
+import conversationAnalyzer from '../services/conversationAnalyzer.js';
+import authService from '../services/authService.js';
+import csvService from '../services/csvService.js';
+import sessionManager from '../services/sessionManager.js';
+import { 
   requireAuth,
   requireAdmin,
   requireSupportOrAdmin,
-} = require("../middleware/auth");
-const ViteExpress = require("vite-express");
+ } from '../middleware/auth.js';
+import ViteExpress from 'vite-express';
 
 class WebServer {
   constructor(port = 3000) {
@@ -700,7 +706,6 @@ LuisOnorio,Av. Constituyentes,Micronave,25,20,500,350000,Pre-Venta,Cuenta con mu
         logger.log("BOT", endMessage, phone);
 
         // Limpiar la sesión
-        const sessionManager = require("../services/sessionManager");
         sessionManager.clearSession(phone);
 
         // Cambiar a modo IA si estaba en modo humano
@@ -884,4 +889,4 @@ LuisOnorio,Av. Constituyentes,Micronave,25,20,500,350000,Pre-Venta,Cuenta con mu
   }
 }
 
-module.exports = WebServer;
+export default WebServer;

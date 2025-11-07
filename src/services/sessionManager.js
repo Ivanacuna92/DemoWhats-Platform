@@ -1,7 +1,7 @@
-const config = require('../config/config');
-const logger = require('./logger');
-const humanModeManager = require('./humanModeManager');
-const database = require('./database');
+import config from '../config/config.js';
+import logger from './logger.js';
+import humanModeManager from './humanModeManager.js';
+import database from './database.js';
 
 class SessionManager {
     constructor() {
@@ -300,4 +300,4 @@ class SessionManager {
     }
 }
 
-module.exports = new SessionManager();
+export default new SessionManager();

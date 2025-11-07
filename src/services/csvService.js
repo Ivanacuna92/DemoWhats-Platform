@@ -1,6 +1,6 @@
-const fs = require('fs').promises;
-const path = require('path');
-const csv = require('csv-parse/sync');
+import fs from 'fs/promises';
+import path from 'path';
+import { parse } from 'csv-parse/sync';
 
 class CSVService {
   constructor() {
@@ -33,7 +33,7 @@ class CSVService {
   async saveCSV(filename, content) {
     try {
       // Primero parsear para validar
-      const records = csv.parse(content, {
+      const records = parse(content, {
         columns: true,
         skip_empty_lines: true,
         trim: true
@@ -119,7 +119,7 @@ class CSVService {
         const content = await fs.readFile(filePath, 'utf8');
 
         try {
-          const records = csv.parse(content, {
+          const records = parse(content, {
             columns: true,
             skip_empty_lines: true,
             trim: true
@@ -200,7 +200,7 @@ class CSVService {
           let records = 0;
           try {
             const content = await fs.readFile(filePath, 'utf8');
-            const parsed = csv.parse(content, {
+            const parsed = parse(content, {
               columns: true,
               skip_empty_lines: true
             });
@@ -287,4 +287,4 @@ class CSVService {
   }
 }
 
-module.exports = new CSVService();
+export default new CSVService();

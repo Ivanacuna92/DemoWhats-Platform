@@ -1,6 +1,7 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
-module.exports = {
+export default {
     deepseekApiKey: process.env.DEEPSEEK_API_KEY,
     deepseekApiUrl: 'https://api.deepseek.com/v1/chat/completions',
     webPort: process.env.WEB_PORT || 3001,

@@ -1,19 +1,18 @@
-const makeWASocket = require("baileys").default;
-const {
+import makeWASocket, {
   DisconnectReason,
   useMultiFileAuthState,
   makeCacheableSignalKeyStore,
   fetchLatestBaileysVersion,
-} = require("baileys");
-const qrcode = require("qrcode-terminal");
-const pino = require("pino");
-const config = require("../config/config");
-const logger = require("../services/logger");
-const aiService = require("../services/aiService");
-const sessionManager = require("../services/sessionManager");
-const promptLoader = require("../services/promptLoader");
-const humanModeManager = require("../services/humanModeManager");
-const locationValidator = require("../services/locationValidator");
+} from "@whiskeysockets/baileys";
+import qrcode from "qrcode-terminal";
+import pino from "pino";
+import config from "../config/config.js";
+import logger from "../services/logger.js";
+import aiService from "../services/aiService.js";
+import sessionManager from "../services/sessionManager.js";
+import promptLoader from "../services/promptLoader.js";
+import humanModeManager from "../services/humanModeManager.js";
+import locationValidator from "../services/locationValidator.js";
 
 class WhatsAppBot {
   constructor() {
@@ -383,4 +382,4 @@ class WhatsAppBot {
   }
 }
 
-module.exports = WhatsAppBot;
+export default WhatsAppBot;

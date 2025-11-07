@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 class PromptLoader {
     constructor() {
@@ -30,4 +30,4 @@ class PromptLoader {
     }
 }
 
-module.exports = new PromptLoader();
+export default new PromptLoader();

@@ -219,4 +219,4 @@ class LocationValidator {
   }
 }
 
-module.exports = new LocationValidator();
+export default new LocationValidator();
