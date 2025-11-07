@@ -3,6 +3,7 @@ import ContactsList from './components/ContactsList';
 import ChatPanel from './components/ChatPanel';
 import Dashboard from './components/Dashboard';
 import Reports from './components/Reports';
+import QRSession from './components/QRSession';
 import Header from './components/Header';
 import Login from './components/Login';
 import { checkAuth, logout } from './services/api';
@@ -131,19 +132,21 @@ function App() {
         <Dashboard />
       ) : currentView === 'reports' ? (
         <Reports />
+      ) : currentView === 'session' && user?.role === 'admin' ? (
+        <QRSession />
       ) : (
         <div className="flex flex-1 overflow-hidden">
-          <ContactsList 
+          <ContactsList
             contacts={contacts}
             setContacts={setContacts}
             selectedContact={selectedContact}
             onSelectContact={setSelectedContact}
           />
-          <ChatPanel 
+          <ChatPanel
             contact={selectedContact}
             onUpdateContact={(updatedContact) => {
               setSelectedContact(updatedContact);
-              setContacts(prev => prev.map(c => 
+              setContacts(prev => prev.map(c =>
                 c.phone === updatedContact.phone ? updatedContact : c
               ));
             }}

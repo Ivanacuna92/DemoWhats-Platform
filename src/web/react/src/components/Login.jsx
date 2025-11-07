@@ -38,7 +38,7 @@ function Login({ onLoginSuccess }) {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-navetec-primary">
-            GabyLimp WhatsApp
+            AloIADemo WhatsApp
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Panel de gestión de conversaciones
@@ -108,7 +108,7 @@ function Login({ onLoginSuccess }) {
 
           <div className="text-xs text-gray-500 text-center mt-4">
             <strong>Usuarios por defecto:</strong><br />
-            <strong>Admin:</strong> admin@gabylimp.com / gabylimp*2025<br />
+            <strong>Admin:</strong> admin@demo.com / demo123<br />
           </div>
         </form>
       </div>
